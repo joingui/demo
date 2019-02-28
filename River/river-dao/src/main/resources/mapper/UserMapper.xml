@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 为这个mapper指定一个唯一的namespace  -->
+<mapper namespace="com.river.dao.UserMapper">
+
+
+    <!-- 根据id查询得到一个user对象-->
+    <select id="getUserById" parameterType="int"
+            resultType="com.river.bean.User"> select * from user where id=#{id} </select>
+    <insert id="InsertUser"> INSERT user(id,name) VALUES (#{id},#{name})    </insert>
+
+    <delete id="deleteUser"> DELETE FROM user WHERE id=#{id}   </delete>
+
+    <update id="updateUser"> UPDATE  user SET name=#{name} WHERE  id=#{id} </update>
+</mapper>
